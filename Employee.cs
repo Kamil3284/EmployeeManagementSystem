@@ -24,15 +24,21 @@ namespace EmployeeManagementSystem
 
         public static string CheckStringCorrectness(string str)
         {
+            int? variable = null;
             char[] strCharArray = str.ToCharArray();
             foreach(char element in strCharArray)
             {
 
-                int.TryParse(element, out int variable);
+                int.TryParse(element, out variable);
                 if (variable == null)
                     continue;
-                else break;
+                else 
+                {
+                    Console.WriteLine("Given text is invalid.");
+                    break;
+                }
             }
+
             return str;
         }
         public Employee()
